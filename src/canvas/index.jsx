@@ -1,7 +1,23 @@
+import { Environment, Center } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
 import React from "react";
+import BackDrop from "./BackDrop";
+import CameraRig from "./CameraRig";
+import Shirt from "./Shirt";
 
-const Cavas = () => {
-  return <div>Cavas</div>;
+const CavasModel = () => {
+  return (
+    <Canvas>
+      <ambientLight intensity={0.5} />
+      <Environment preset="city" />
+      <CameraRig>
+        {/* <BackDrop /> */}
+        <Center>
+          <Shirt />
+        </Center>
+      </CameraRig>
+    </Canvas>
+  );
 };
 
-export default Cavas;
+export default CavasModel;
