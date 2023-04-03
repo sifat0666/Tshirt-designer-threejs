@@ -1,7 +1,7 @@
-import React from "react";
+import CustomButton from "./CustomButton";
+import AIPicker from "./AIPicker";
+import ColorPicker from "./ColorPicker";
+import FilePicker from "./FilePicker";
+import Tab from "./Tab";
 
-const index = () => {
-  return <div>index</div>;
-};
-
-export default index;
+export { CustomButton, AIPicker, ColorPicker, FilePicker, Tab };
