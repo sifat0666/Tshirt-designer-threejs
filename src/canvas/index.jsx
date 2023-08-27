@@ -1,4 +1,4 @@
-import { Environment, Center } from "@react-three/drei";
+import { Environment, Center, OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import React from "react";
 import BackDrop from "./BackDrop";
@@ -15,12 +15,13 @@ const CavasModel = () => {
     >
       <ambientLight intensity={0.5} />
       <Environment preset="city" />
-      <CameraRig>
-        <BackDrop />
-        <Center>
-          <Shirt />
-        </Center>
-      </CameraRig>
+      {/* <CameraRig> */}
+      {/* <BackDrop /> */}
+      <Center>
+        <Shirt />
+        <OrbitControls />
+      </Center>
+      {/* </CameraRig> */}
     </Canvas>
   );
 };
