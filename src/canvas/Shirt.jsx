@@ -28,7 +28,7 @@ const Shirt = () => {
         material-roughness={1}
         dispose={null}
       >
-        <OrbitControls target={[0, 0, 1]} />
+        {/* <OrbitControls target={[0, 0, 1]} /> */}
 
         {snap.isFullTexture && (
           <Decal
