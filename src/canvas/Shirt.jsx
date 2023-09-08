@@ -5,13 +5,30 @@ import { useFrame } from "@react-three/fiber";
 import { Decal, OrbitControls, useGLTF, useTexture } from "@react-three/drei";
 
 import state from "../store";
+import { useState } from "react";
+import { useEffect } from "react";
 
 const Shirt = () => {
   const snap = useSnapshot(state);
+  console.log(snap.changePosition);
   const { nodes, materials } = useGLTF("/shirt_baked.glb");
 
   const logoTexture = useTexture(snap.logoDecal);
   const fullTexture = useTexture(snap.fullDecal);
+
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (ev) => {
+      setPosition({ x: ev.clientX, y: ev.clientY });
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
 
   useFrame((state, delta) =>
     easing.dampC(materials.lambert1.color, snap.color, 0.25, delta)
@@ -41,7 +58,11 @@ const Shirt = () => {
 
         {snap.isLogoTexture && (
           <Decal
-            position={[0, 0.04, 0.15]}
+            position={[
+              (position.x / 10000) * 5 - 0.15,
+              (-position.y / 10000) * 8 + 0.25,
+              0.1,
+            ]}
             rotation={[0, 0, 0]}
             scale={0.15}
             map={logoTexture}

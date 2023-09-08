@@ -8,6 +8,7 @@ specifiers:
   '@vitejs/plugin-react': ^3.1.0
   autoprefixer: ^10.4.15
   framer-motion: ^10.16.1
+  lil-gui: ^0.18.2
   maath: ^0.5.3
   postcss: ^8.4.28
   react: ^18.2.0
@@ -22,6 +23,7 @@ dependencies:
   '@react-three/drei': 9.80.8_lxwkvkwhevdtgoejqgstv5tthe
   '@react-three/fiber': 8.13.7_42od2y7wbz57ukb7jorrhqe6ja
   framer-motion: 10.16.1_biqbaboplfbrettd7655fr4n2y
+  lil-gui: 0.18.2
   maath: 0.5.3_three@0.151.3
   react: 18.2.0
   react-color: 2.19.3_react@18.2.0
@@ -1207,6 +1209,10 @@ packages:
 
   /ktx-parse/0.4.5:
     resolution: {integrity: sha512-MK3FOody4TXbFf8Yqv7EBbySw7aPvEcPX++Ipt6Sox+/YMFvR5xaTyhfNSk1AEmMy+RYIw81ctN4IMxCB8OAlg==}
+    dev: false
+
+  /lil-gui/0.18.2:
+    resolution: {integrity: sha512-DgdrLy3/KGC0PiQLKgOcJMPItP4xY4iWgJ9+91Zaxfr8GCTmMps05QS9w9jW7yspILlbscbquwjOwxmWnSx5Uw==}
     dev: false
 
   /lilconfig/2.1.0:

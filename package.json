@@ -12,6 +12,7 @@
     "@react-three/drei": "^9.80.8",
     "@react-three/fiber": "^8.13.7",
     "framer-motion": "^10.16.1",
+    "lil-gui": "^0.18.2",
     "maath": "^0.5.3",
     "react": "^18.2.0",
     "react-color": "^2.19.3",
