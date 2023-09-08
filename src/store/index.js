@@ -6,8 +6,8 @@ const state = proxy({
   isLogoTexture: true,
   logoDecal: "./threejs.png",
   fullDecal: "./threejs.png",
-  changePosition,
-  setChangePosition,
+  changePosition: "",
+  setChangePosition: "",
 });
 
 export default state;
