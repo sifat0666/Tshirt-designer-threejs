@@ -10,9 +10,9 @@ import { useEffect } from "react";
 
 const Shirt = () => {
   const snap = useSnapshot(state);
-  console.log(snap.changePosition);
-  const { nodes, materials } = useGLTF("/shirt_baked.glb");
-
+  // console.log(snap.changePosition);
+  const { nodes, materials } = useGLTF("/1.glb");
+  // console.log(nodes);
   const logoTexture = useTexture(snap.logoDecal);
   const fullTexture = useTexture(snap.fullDecal);
 
@@ -31,7 +31,7 @@ const Shirt = () => {
   }, []);
 
   useFrame((state, delta) =>
-    easing.dampC(materials.lambert1.color, snap.color, 0.25, delta)
+    easing.dampC(materials.carton.color, snap.color, 0.25, delta)
   );
 
   const stateString = JSON.stringify(snap);
@@ -40,8 +40,8 @@ const Shirt = () => {
     <group key={stateString}>
       <mesh
         castShadow
-        geometry={nodes.T_Shirt_male.geometry}
-        material={materials.lambert1}
+        geometry={nodes.Box_bit_open.geometry}
+        material={materials.carton}
         material-roughness={1}
         dispose={null}
       >
@@ -49,20 +49,21 @@ const Shirt = () => {
 
         {snap.isFullTexture && (
           <Decal
-            position={[0, 0, 0]}
+            position={[0.6, 0.6, 0]}
             rotation={[0, 0, 0]}
-            scale={1}
+            scale={3}
             map={fullTexture}
           />
         )}
 
         {snap.isLogoTexture && (
           <Decal
-            position={[
-              (position.x / 10000) * 5 - 0.15,
-              (-position.y / 10000) * 8 + 0.25,
-              0.1,
-            ]}
+            // position={[
+            //   (position.x / 10000) * 5 - 0.15,
+            //   (-position.y / 10000) * 8 + 0.25,
+            //   0.1,
+            // ]}
+            position={[0.6,0.6,0]}
             rotation={[0, 0, 0]}
             scale={0.15}
             map={logoTexture}
